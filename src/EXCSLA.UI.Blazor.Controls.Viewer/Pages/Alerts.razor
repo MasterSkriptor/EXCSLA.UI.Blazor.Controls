@@ -1,0 +1,14 @@
+﻿@page "/Alerts"
+@inject IAlertService AlertService
+
+<h3>Alerts</h3>
+<AlertBox />
+<BSButton ButtonType="ButtonType.Button" OnClick="OnAddAlert_Click">Add an Alert.</BSButton>
+
+@code {
+    public void OnAddAlert_Click(MouseEventArgs e)
+    {
+        AlertService.AddAlert("A new Alert was added", EXCSLA.Shared.Core.ValueObjects.Common.AlertType.Success);
+    }
+
+}

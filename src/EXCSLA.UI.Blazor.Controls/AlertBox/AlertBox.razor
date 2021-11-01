@@ -1,0 +1,10 @@
+﻿@namespace EXCSLA.UI.Blazor.Controls
+
+<div class="alert-box">
+    @foreach (var alert in Alerts)
+    {
+        <BSAlert Color="@GetColorFromAlertType(alert.Type)" IsDismissible="true">
+            @alert.Message
+        </BSAlert>
+    }
+</div>

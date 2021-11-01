@@ -1,0 +1,48 @@
+﻿@page "/DataTables"
+
+<h3>Data Tables</h3>
+
+<TemplatedDataTable Items="@Items" HasFilter="false" HasNavBar="false" SelectedItem="@SelectedItem">
+    <HeaderTemplate>
+        <BSTableHeadCell>Id</BSTableHeadCell>
+        <BSTableHeadCell>Make</BSTableHeadCell>
+        <BSTableHeadCell>Model</BSTableHeadCell>
+    </HeaderTemplate>
+    <ItemTemplate Context="item">
+        <BSTableCell>@item.Id</BSTableCell>
+        <BSTableCell>@item.Make</BSTableCell>
+        <BSTableCell>@item.Model</BSTableCell>
+    </ItemTemplate>
+</TemplatedDataTable>
+@code 
+{
+    public class Car 
+    { 
+        public int Id { get; set; }
+        public string Make { get; set; }
+        public string Model { get; set; }
+
+        public Car(int id, string make, string model)
+        {
+            Id = id;
+            Make = make;
+            Model = model;
+        }
+    }
+
+    [Parameter] public List<Car> Items { get; set; }
+    [Parameter] public Car SelectedItem { get; set; }
+
+    protected override Task OnInitializedAsync()
+    {
+        Items = new List<Car>();
+
+        Items.Add(new Car(1, "Dodge", "Charger"));
+        Items.Add(new Car(2, "Dodge", "Challenger"));
+        Items.Add(new Car(3, "Ford", "Mustang"));
+        Items.Add(new Car(4, "Ford", "Explorer"));
+        Items.Add(new Car(5, "Chevy", "Courvette"));
+
+        return base.OnInitializedAsync();
+    }
+}

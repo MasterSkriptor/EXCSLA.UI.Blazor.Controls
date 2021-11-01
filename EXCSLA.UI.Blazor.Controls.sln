@@ -9,7 +9,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{1DA72FD6
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EXCSLA.UI.Blazor.Controls", "src\EXCSLA.UI.Blazor.Controls\EXCSLA.UI.Blazor.Controls.csproj", "{52717301-C8B3-4C0A-8931-442E6B5C4370}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EXCSLA.UI.Blazor.Controls.UnitTests", "tests\EXCSLA.UI.Blazor.Controls.UnitTests\EXCSLA.UI.Blazor.Controls.UnitTests.csproj", "{9865F7A4-2D06-4A6D-A7DA-0C396686AC3B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EXCSLA.UI.Blazor.Controls.UnitTests", "tests\EXCSLA.UI.Blazor.Controls.UnitTests\EXCSLA.UI.Blazor.Controls.UnitTests.csproj", "{9865F7A4-2D06-4A6D-A7DA-0C396686AC3B}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EXCSLA.UI.Blazor.Controls.Viewer", "src\EXCSLA.UI.Blazor.Controls.Viewer\EXCSLA.UI.Blazor.Controls.Viewer.csproj", "{FCE3CFED-616E-4548-8D75-A31887884B8D}"
 EndProject
