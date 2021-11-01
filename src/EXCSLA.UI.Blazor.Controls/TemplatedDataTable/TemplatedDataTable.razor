@@ -1,11 +1,6 @@
 ﻿@namespace EXCSLA.UI.Blazor.Controls
 @typeparam TItem
 
-@if (HasReportBar && HasFilter)
-{
-    <ReportBar Items="ReportBarFilters" SelectedItem="@SelectedFilter"
-                OnSelectedItemChanged="HandleSelectedFilterChanged" />
-}
 @if (HasNavBar)
 {
     <BSButtonGroup IsToolbar="true" Class="justify-content-between">
@@ -14,7 +9,7 @@
         </BSButtonGroup>
 
         <BSButtonGroup>
-            @if (HasFilter && HasReportBar == false)
+            @if (HasFilter)
             {
                 <div class="input-group">
                     <div class="input-group-prepend">

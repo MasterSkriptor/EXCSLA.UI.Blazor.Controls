@@ -8,7 +8,6 @@ namespace EXCSLA.UI.Blazor.Controls
     {
         [Parameter] public List<TItem> Items { get; set; }
         [Parameter] public TItem SelectedItem { get; set; }
-        [Parameter] public Dictionary<string, int> ReportBarFilters { get; set; }
         [Parameter] public List<string> Filters { get; set; }
         [Parameter] public string SelectedFilter { get; set; } = string.Empty;
 
@@ -21,7 +20,6 @@ namespace EXCSLA.UI.Blazor.Controls
 
         [Parameter] public string LoadingMessage { get; set; } = string.Empty;
 
-        [Parameter] public bool HasReportBar { get; set; } = false;
         [Parameter] public bool HasFilter { get; set; } = false;
         [Parameter] public bool HasNavBar { get; set; } = false;
 
