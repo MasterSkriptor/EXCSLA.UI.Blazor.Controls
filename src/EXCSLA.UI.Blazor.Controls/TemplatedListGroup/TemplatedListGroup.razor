@@ -1,0 +1,44 @@
+﻿@namespace EXCSLA.UI.Blazor.Controls
+@typeparam TItem
+
+<BSCard CardType="CardType.Card">
+    <BSCard CardType="CardType.Header" Class="pb-0">
+        <BSCard CardType="CardType.Title" Class="text-color-pipedreams">@Title</BSCard>
+        @if (HasCommandBar)
+        {
+            <BSButtonGroup IsToolbar="true">
+                <BSButtonGroup>
+                    @CommandBar
+                </BSButtonGroup>
+            </BSButtonGroup>
+        }
+    </BSCard>
+    <BSCard CardType="CardType.Body">
+        <BSListGroup ListGroupType="ListGroupType">
+            @if (Items != null || Items.Count > 0)
+            {
+                @foreach (var item in Items)
+                {
+                    @ItemTemplate(item)
+                }
+            }
+            else
+            {
+                <BSListGroupItem ListGroupType="ListGroupType.Button">
+                    <BSListGroupItemText>No items available.</BSListGroupItemText>
+                </BSListGroupItem>
+            }
+
+        </BSListGroup>
+    </BSCard>
+    <BSCard CardType="CardType.Footer">
+        @if (HasStatusBar)
+        {
+            <BSRow>
+                <BSCol XS="12">
+                    @StatusBar
+                </BSCol>
+            </BSRow>
+        }
+    </BSCard>
+</BSCard>

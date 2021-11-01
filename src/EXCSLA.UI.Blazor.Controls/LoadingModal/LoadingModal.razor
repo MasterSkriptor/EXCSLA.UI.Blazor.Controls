@@ -1,0 +1,11 @@
+﻿@namespace EXCSLA.UI.Blazor.Controls
+
+<BSModal IsOpen="@IsOpen" IgnoreClickOnBackdrop="true" IgnoreEscape="true" DisableAnimations="true" Class="@CssClass" IsCentered="true">
+    <BSModalBody>
+        <BSImage src="@LogoUrl" Alignment="Alignment.Center" IsResponsive="true" />
+        <hr />
+        <Chase Color="@LoadingAnimationColor" Center="true" Size="@LoadingAnimationSize" />
+        <br />
+        <p class="text-center">@Message</p>
+    </BSModalBody>
+</BSModal>

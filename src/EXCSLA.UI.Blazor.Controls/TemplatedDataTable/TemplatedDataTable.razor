@@ -1,0 +1,63 @@
+﻿@namespace EXCSLA.UI.Blazor.Controls
+@typeparam TItem
+
+@if (HasReportBar && HasFilter)
+{
+    <ReportBar Items="ReportBarFilters" SelectedItem="@SelectedFilter"
+                OnSelectedItemChanged="HandleSelectedFilterChanged" />
+}
+@if (HasNavBar)
+{
+    <BSButtonGroup IsToolbar="true" Class="justify-content-between">
+        <BSButtonGroup>
+            @NavBarTemplate
+        </BSButtonGroup>
+
+        <BSButtonGroup>
+            @if (HasFilter && HasReportBar == false)
+            {
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">Filter By:</div>
+                    </div>
+                    <BSBasicInput InputType="InputType.Select" Id="filter" Size="Size.ExtraSmall"
+                                    T="string" @bind-Value="SelectedFilter">
+                        @if (Filters != null)
+                        {
+                            @*<option value="All" selected="@(_selectedFilterOption ==  "All" ? true : false)">All</option>*@
+                            foreach (var option in Filters)
+                            {
+                                <option value="@option" selected="@(SelectedFilter == option ? true : false)">@option</option>
+                            }
+                        }
+                    </BSBasicInput>
+                </div>
+            }
+        </BSButtonGroup>
+    </BSButtonGroup>
+}
+
+<BSTable IsSmall="true" IsHoverable="true" IsResponsive="true">
+    <BSTableHead>
+        <BSTableRow>
+            @HeaderTemplate
+        </BSTableRow>
+    </BSTableHead>
+    <BSTableBody>
+        @if (Items != null && Items.Count > 0)
+        {
+            @foreach (var item in Items)
+            {
+                <BSTableRow OnClick="async () => await HandleOnSelectedChanged(item)" Class="@(item.Equals(SelectedItem) ? "table-active" : string.Empty)">
+                    @ItemTemplate(item)
+                </BSTableRow>
+            }
+        }
+        else
+        {
+            <BSTableRow>
+                <BSTableCell>No records returned</BSTableCell>
+            </BSTableRow>
+        }
+    </BSTableBody>
+</BSTable>

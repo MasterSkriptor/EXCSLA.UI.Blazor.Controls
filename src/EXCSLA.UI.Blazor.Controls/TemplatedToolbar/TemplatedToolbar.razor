@@ -1,0 +1,27 @@
+﻿@namespace EXCSLA.UI.Blazor.Controls
+
+<BSRow Class="mb-3">
+    <BSCol XS="@(HasSearch == true ? "4" : "12")">
+        <BSButtonGroup Size="Size.Small">
+            @ChildContent
+        </BSButtonGroup>
+    </BSCol>
+    @if (HasSearch)
+    {
+        <BSCol XS="8" Class="float-right">
+            <BSButtonGroup Size="Size.Small">
+                <div class="input-group input-group-sm">
+                    <input type="text" placeholder="Search" @bind="@SearchText" @bind:event="oninput" @onkeypress="HandleSearchOnKeyPress" />
+                    @if (SearchOnKeyPress)
+                    {
+                        <div class="input-group-prepend">
+                            <BSButton Color="Color.Secondary" Size="Size.ExtraSmall" IsOutline="true" OnClick="HandleSearchOnClick">
+                                <span class="oi oi-magnifying-glass"></span>
+                            </BSButton>
+                        </div>
+                    }
+                </div>
+            </BSButtonGroup>
+        </BSCol>
+    }
+</BSRow>

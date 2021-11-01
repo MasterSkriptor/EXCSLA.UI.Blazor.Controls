@@ -1,0 +1,57 @@
+﻿@namespace EXCSLA.UI.Blazor.Controls
+@typeparam TItem
+
+<SpinLoader IsLoading="Items == null" Center="true">
+    <LoadingTemplate>
+        <LoadingModal IsOpen="true" LoadingAnimationColor="#206994"
+                      LoadingAnimationSize="60px" LogoUrl="../imgs/logo.png" CssClass="loading-screen"
+                      Message="@LoadingMessage" />
+    </LoadingTemplate>
+    <ContentTemplate>
+        <!-- Listbar -->
+        <BSContainer IsFluid="true">
+            <BSRow>
+                <BSCol MD="4">
+                    <BSContainer>
+                        <BSRow Class="mb-3">
+                            <TemplatedToolbar HasSearch="@ListIsSearchable" SearchText="@SearchText" OnSearch="HandleSearch">
+                                @NavBarTemplate
+                            </TemplatedToolbar>
+                        </BSRow>
+                        <BSRow>
+                            <BSCol>
+                                <BSTable IsSmall="true" IsBorderless="true" IsHoverable="true" IsResponsive="true">
+                                    <BSTableBody>
+                                        @if (Items != null && Items.Count > 0)
+                                        {
+                                            @foreach (var item in Items)
+                                            {
+                                                <BSTableRow OnClick="async () => await HandleItemSelected(item)" Class="@(item.Equals(SelectedItem) ? "table-active" : string.Empty)">
+                                                    <BSTableCell>@ItemTemplate(item)</BSTableCell>
+                                                </BSTableRow>
+                                            }
+                                        }
+                                    </BSTableBody>
+                                </BSTable>
+                            </BSCol>
+                        </BSRow>
+                    </BSContainer>
+                </BSCol>
+                <!-- End Listbar -->
+                <!-- Form -->
+                <BSCol MD="8">
+                    <TemplatedForm Item="@SelectedItem" OnSave="HandleSave" OnCancel="HandleOnCancel"
+                                   CancelButtonTitle="Cancel" SaveButtonTitle="Save" SaveButtonDisabled="@IsSaveButtonDisabled"
+                                   CancelButtonDisabled="@IsCancelButtonDisabled" OnValidated="HandleOnValidated"
+                                   TItem="TItem" OnFieldChanged="HandleOnFieldChanged" FormTemplate="FormTemplate" Errors="@Errors" />
+                </BSCol>
+                <!-- End Form -->
+            </BSRow>
+        </BSContainer>
+    </ContentTemplate>
+    <FaultedContentTemplate>
+        <LoadingModal IsOpen="true" LoadingAnimationColor="#206994"
+                      LoadingAnimationSize="60px" LogoUrl="../imgs/logo.png" CssClass="loading-screen"
+                      Message="Our shoe came untied. Please refresh your browser." />
+    </FaultedContentTemplate>
+</SpinLoader>

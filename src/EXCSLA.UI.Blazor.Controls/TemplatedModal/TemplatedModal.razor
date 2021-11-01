@@ -1,0 +1,13 @@
+﻿@namespace EXCSLA.UI.Blazor.Controls
+@typeparam TItem
+
+<BSModal IsOpen="@IsOpen" Size="Size" @ref="Modal">
+    <BSModalHeader OnClick="HandleCancel">@Title</BSModalHeader>
+    <BSModalBody>
+        @ItemTemplate(Item)
+    </BSModalBody>
+    <BSModalFooter>
+        <BSButton Color="Color.Secondary" OnClick="@(() => HandleCancel())">@CancelText</BSButton>
+        <BSButton Color="@SaveColor" OnClick="@(() => HandleSave(Item))">@SaveText</BSButton>
+    </BSModalFooter>
+</BSModal> 

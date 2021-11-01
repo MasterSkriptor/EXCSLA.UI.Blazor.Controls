@@ -1,0 +1,12 @@
+﻿@namespace EXCSLA.UI.Blazor.Controls
+@typeparam TItem
+
+<BSModal Model="Item" IsOpen="@IsOpen">
+    <BSModalHeader OnClick="HandleCancel"><h3>@Title</h3></BSModalHeader>
+    <BSModalBody>
+        <p>FIll out the following form:</p>
+        <TemplatedForm Item="Item" SaveButtonTitle="@SaveButtonTitle" CancelButtonTitle="@CancelButtonTitle" OnSave="@HandleSave" OnCancel="HandleCancel"
+                       FormTemplate="FormTemplate" SaveButtonDisabled="@SaveButtonDisabled" 
+                       CancelButtonDisabled="@CancelButtonDisabled" TItem="TItem" Errors="@Errors"/>
+    </BSModalBody>
+</BSModal>

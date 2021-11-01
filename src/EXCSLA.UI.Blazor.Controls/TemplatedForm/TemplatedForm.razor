@@ -1,0 +1,16 @@
+﻿@namespace EXCSLA.UI.Blazor.Controls
+@typeparam TItem
+
+<BSForm Model="Item" OnValidSubmit="@HandleSave">
+    <ObjectGraphDataAnnotationsValidator />
+    <ServerSideValidator @ref="ServerSideValidator" />
+    <ValidationSummary />
+    <InputWatcher @ref="InputWatcher" FieldChanged="HandleFieldChanged" />
+
+    @FormTemplate(Item)
+
+    <BSFormGroup>
+        <BSButton ButtonType="ButtonType.Submit" IsDisabled="@SaveButtonDisabled">@SaveButtonTitle</BSButton>
+        <BSButton ButtonType="ButtonType.Button" OnClick="HandleCancel" IsDisabled="@CancelButtonDisabled">@CancelButtonTitle</BSButton>
+    </BSFormGroup>
+</BSForm>
