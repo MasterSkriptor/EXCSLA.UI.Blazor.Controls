@@ -18,8 +18,9 @@ jobs:
   - task: UseGitVersion@5
     displayName: 'GitVersion'
     inputs:
-      versionSpec: '5.6.11'
-
+      versionSpec: '5.7.0'
+      updateAssemblyInfo: true
+  
   - task: UseDotNet@2
     inputs:
       packageType: 'sdk'
