@@ -1,5 +1,5 @@
 # Introduction
-Controls for webassembly and server blazor apps
+Controls for webassembly and server blazor apps.
 
 # Getting Started
 To use complete the following:
