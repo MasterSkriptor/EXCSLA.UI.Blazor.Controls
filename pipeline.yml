@@ -22,7 +22,6 @@ jobs:
     displayName: 'GitVersion'
     inputs:
       versionSpec: '5.7.0'
-      updateAssemblyInfo: true
   
   - task: UseDotNet@2
     inputs:
