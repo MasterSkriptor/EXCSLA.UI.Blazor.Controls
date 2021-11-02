@@ -21,8 +21,8 @@ jobs:
       versionSpec: '5.7.0'
   
   - task: gitversion/execute@0
-    inputs:
-    
+    displayName: 'Determine Version'
+
   - task: UseDotNet@2
     inputs:
       packageType: 'sdk'
