@@ -22,6 +22,8 @@ jobs:
   
   - task: gitversion/execute@0
     displayName: 'Determine Version'
+    inputs:
+     additionalArguments: /showConfig
 
   - task: UseDotNet@2
     inputs:
