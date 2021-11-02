@@ -18,7 +18,7 @@ jobs:
   - task: UseGitVersion@5
     displayName: 'GitVersion'
     inputs:
-      versionSpec: '5.X'
+      versionSpec: '5.7'
       useConfigFile: true
       configFilePath: 'GitVersion.yml'
 
