@@ -2,9 +2,9 @@ mode: ContinuousDeployment
 continuous-delivery-fallback-tag: ''
 branches:
   main:
-    is-release-branch: true
-  develop:
     mode: ContinuousDeployment
+    is-release-branch: true
 ignore:
   sha: []
 merge-message-formats: {}
+
