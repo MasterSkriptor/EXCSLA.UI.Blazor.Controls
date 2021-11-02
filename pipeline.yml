@@ -23,7 +23,6 @@ jobs:
   
   - task: gitversion/execute@0
     displayName: 'Execute GitVersion'
-    inputs:
 
   - task: UseDotNet@2
     inputs:
