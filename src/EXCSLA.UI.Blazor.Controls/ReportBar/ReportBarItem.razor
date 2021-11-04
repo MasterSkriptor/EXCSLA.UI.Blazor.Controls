@@ -1,0 +1,8 @@
+﻿@namespace EXCSLA.UI.Blazor.Controls
+
+<BSCard Class="@BorderClass" @onclick="async () => await BCCard_OnClick(Item.Key)">
+    <BSCard CardType="CardType.Body" Class="@BackgroundClass">
+        <BSCard CardType="CardType.Text" Class="@TextCss">@Item.Key</BSCard>
+        <BSCard CardType="CardType.Text" Class="@TextCss">@Item.Value</BSCard>
+    </BSCard>
+</BSCard>
