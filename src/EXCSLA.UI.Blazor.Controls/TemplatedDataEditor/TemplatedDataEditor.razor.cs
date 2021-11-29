@@ -27,6 +27,8 @@ namespace EXCSLA.UI.Blazor.Controls
 
         [Parameter] public string LoadingMessage { get; set; } = "Loading...";
         [Parameter] public string SearchText { get; set; } = string.Empty;
+        [Parameter] public string LoadingAnimationColor { get; set; } = "#206994";
+        [Parameter] public string LogoUrl { get; set; } = "../imgs/logo.png";
         [Parameter] public Dictionary<string, List<string>> Errors { get; set; }
 
         protected async Task HandleSearch(string searchString)

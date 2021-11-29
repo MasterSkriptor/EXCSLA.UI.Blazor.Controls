@@ -1,7 +1,7 @@
 ﻿@namespace EXCSLA.UI.Blazor.Controls
 @typeparam TItem
 
-<BSCard CardType="CardType.Card">
+<BSCard CardType="CardType.Card" Class="@Class">
     <BSCard CardType="CardType.Header" Class="pb-0">
         <BSCard CardType="CardType.Title" Class="text-color-pipedreams">@Title</BSCard>
         @if (HasCommandBar)
@@ -31,14 +31,14 @@
 
         </BSListGroup>
     </BSCard>
-    <BSCard CardType="CardType.Footer">
         @if (HasStatusBar)
         {
-            <BSRow>
-                <BSCol XS="12">
-                    @StatusBar
-                </BSCol>
-            </BSRow>
+            <BSCard CardType="CardType.Footer">
+                <BSRow>
+                    <BSCol XS="12">
+                        @StatusBar
+                    </BSCol>
+                </BSRow>
+            </BSCard>
         }
-    </BSCard>
 </BSCard>
