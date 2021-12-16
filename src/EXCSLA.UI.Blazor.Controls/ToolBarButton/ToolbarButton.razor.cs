@@ -14,7 +14,8 @@ namespace EXCSLA.UI.Blazor.Controls
         [Parameter] public Placement TooltipPlacement { get; set; } = Placement.Top;
         [Parameter] public string Tooltip { get; set; } = string.Empty;
         [Parameter] public bool IsDisabled { get; set; } = false;
-        [Parameter] public string ButtonCss { get; set; } = "btn btn-light";
+        [Parameter] public string Class { get; set; } = "";
+        [Parameter] public Color ButtonColor { get; set; } = Color.Light;
         [Parameter] public string IconCss { get; set; } = "oi oi-plus text-success";
 
         [Parameter] public EventCallback<MouseEventArgs> OnClick { get; set; }

@@ -3,8 +3,8 @@
 
 <SpinLoader IsLoading="Items == null" Center="true">
     <LoadingTemplate>
-        <LoadingModal IsOpen="true" LoadingAnimationColor="#206994"
-                      LoadingAnimationSize="60px" LogoUrl="../imgs/logo.png" CssClass="loading-screen"
+        <LoadingModal IsOpen="true" LoadingAnimationColor="@LoadingAnimationColor"
+                      LoadingAnimationSize="60px" LogoUrl="@LogoUrl" CssClass="loading-screen"
                       Message="@LoadingMessage" />
     </LoadingTemplate>
     <ContentTemplate>
