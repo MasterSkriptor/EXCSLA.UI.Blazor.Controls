@@ -1,5 +1,6 @@
 ﻿using BlazorStrap;
 using Microsoft.AspNetCore.Components;
+using Microsoft.AspNetCore.Components.Web;
 using System.Threading.Tasks;
 
 namespace EXCSLA.UI.Blazor.Controls
@@ -13,7 +14,7 @@ namespace EXCSLA.UI.Blazor.Controls
         [Parameter] public TItem Item { get; set; }
         [Parameter] public RenderFragment<TItem> ItemTemplate { get; set; }
         [Parameter] public EventCallback<TItem> OnSave { get; set; }
-        [Parameter] public EventCallback OnCancel { get; set; }
+        [Parameter] public EventCallback<MouseEventArgs> OnCancel { get; set; }
         [Parameter] public Size Size { get; set; } = Size.Medium;
         [Parameter] public Color SaveColor { get; set; } = Color.Primary;
         [Parameter] public string SaveText { get; set; } = "Save";

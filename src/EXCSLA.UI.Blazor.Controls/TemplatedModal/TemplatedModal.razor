@@ -7,7 +7,7 @@
         @ItemTemplate(Item)
     </BSModalBody>
     <BSModalFooter>
-        <BSButton Color="Color.Secondary" OnClick="@(() => HandleCancel())">@CancelText</BSButton>
+        <BSButton Color="Color.Secondary" OnClick="HandleCancel">@CancelText</BSButton>
         <BSButton Color="@SaveColor" OnClick="@(() => HandleSave(Item))">@SaveText</BSButton>
     </BSModalFooter>
 </BSModal> 
